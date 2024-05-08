@@ -267,3 +267,21 @@
   new PureCounter();
 
 })()
+
+// var modal = document.getElementById("myModal");
+
+// // Obtén la imagen y establece el contenido del modal
+// var img = document.getElementById("img01");
+// var modalImg = document.getElementsByClassName("modal-content")[0];
+
+// // Función para abrir el modal
+// function openModal(src) {
+//   modal.style.display = "block";
+//   modalImg.src = src;
+// }
+
+// // Función para cerrar el modal
+// var span = document.getElementsByClassName("close")[0];
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
