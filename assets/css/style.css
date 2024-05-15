@@ -621,11 +621,6 @@ section {
   border: 2px solid #2487ce;
 }
 
-.about .content .btn-learn-more:hover {
-  background: #2487ce;
-  color: #fff;
-  text-decoration: none;
-}
 
 
 /*--------------------------------------------------------------
@@ -806,7 +801,7 @@ section {
 #services .section-title p {
   margin-bottom: 0;
   font-size: 14px;
-  color: #FFA500;
+  color: #124265;
 }
 
 #services {
@@ -1462,6 +1457,28 @@ section {
 /*--------------------------------------------------------------
 # Frequently Asked Questions
 --------------------------------------------------------------*/
+
+#faq {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: url("../img/fotoFondo.jpg") top center;
+  background-size: cover;
+  position: relative;
+}
+
+#faq:before {
+  content: "";
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
 .faq .faq-list {
   padding: 0 100px;
 }
@@ -1875,10 +1892,21 @@ section {
   color: #444444;
 }
 
+#footer .social-links .facebook {
+  background: #3b5998; /* Color de Facebook */
+}
+
+#footer .social-links .instagram {
+  background: #bc2a8d; /* Color de Instagram */
+}
+
+#footer .social-links .whatsapp {
+  background: #25D366; /* Color de WhatsApp */
+}
+
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #2487ce;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -1891,11 +1919,9 @@ section {
 }
 
 #footer .social-links a:hover {
-  background: #3194db;
-  color: #fff;
+  opacity: 0.8;
   text-decoration: none;
 }
-
 .modal {
   display: none;
   position: fixed;
