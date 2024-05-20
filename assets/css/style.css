@@ -69,6 +69,68 @@ h6 {
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.whatsapp-float i {
+  margin-top: 15px;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.whatsapp-float .tooltip-text {
+  visibility: hidden;
+  width: 140px;
+  background-color: #128c7e; /* Matching the hover color */
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the button */
+  left: 50%;
+  margin-left: -70px; /* Center the tooltip */
+  opacity: 0;
+  font-size: 12px; /* Smaller font size */
+  transition: opacity 0.3s;
+}
+
+.whatsapp-float .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Below the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #128c7e transparent transparent transparent; /* Matching background color */
+}
+
+.whatsapp-float:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
 #preloader {
   position: fixed;
   top: 0;
