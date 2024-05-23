@@ -206,7 +206,7 @@ h6 {
 }
 
 #header .logo img {
-  max-height: 40px;
+  max-height: 100px;
 }
 
 @media (max-width: 992px) {
@@ -505,7 +505,7 @@ h6 {
 } 
 
 #hero .btn-get-started {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.5px;
