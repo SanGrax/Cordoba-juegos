@@ -182,7 +182,7 @@ h6 {
   transition: all 0.5s;
   background: #fff;
   z-index: 997;
-  padding: 15px 0;
+  padding: 5px 0;
   border-bottom: 1px solid #e6f2fb;
 }
 
@@ -206,7 +206,7 @@ h6 {
 }
 
 #header .logo img {
-  max-height: 100px;
+  max-height: 85px;
 }
 
 @media (max-width: 992px) {
@@ -244,9 +244,10 @@ h6 {
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-size: 14px;
-  color: #16507b;
+  color: #957dad ;
   white-space: nowrap;
   transition: 0.3s;
+  font-family: "Fredoka One";
 }
 
 .navbar a i,
@@ -260,76 +261,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #FFA500;
-}
-
-.navbar .getstarted,
-.navbar .getstarted:focus {
-  background: #2487ce;
-  padding: 8px 20px;
-  margin-left: 30px;
-  border-radius: 4px;
-  color: #fff;
-}
-
-.navbar .getstarted:hover,
-.navbar .getstarted:focus:hover {
-  color: #fff;
-  background: #3194db;
-}
-
-.navbar .dropdown ul {
-  display: block;
-  position: absolute;
-  left: 14px;
-  top: calc(100% + 30px);
-  margin: 0;
-  padding: 10px 0;
-  z-index: 99;
-  opacity: 0;
-  visibility: hidden;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  transition: 0.3s;
-  border-radius: 4px;
-}
-
-.navbar .dropdown ul li {
-  min-width: 200px;
-}
-
-.navbar .dropdown ul a {
-  padding: 10px 20px;
-  text-transform: none;
-}
-
-.navbar .dropdown ul a i {
-  font-size: 12px;
-}
-
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
-  color: #2487ce;
-}
-
-.navbar .dropdown:hover>ul {
-  opacity: 1;
-  top: 100%;
-  visibility: visible;
-}
-
-.navbar .dropdown .dropdown ul {
-  top: 0;
-  left: calc(100% - 30px);
-  visibility: hidden;
-}
-
-.navbar .dropdown .dropdown:hover>ul {
-  opacity: 1;
-  top: 0;
-  left: 100%;
-  visibility: visible;
+  color: #1c4e63;
 }
 
 @media (max-width: 1366px) {
@@ -411,46 +343,6 @@ h6 {
 .navbar-mobile li:hover>a {
   color: #2487ce;
 }
-
-.navbar-mobile .getstarted,
-.navbar-mobile .getstarted:focus {
-  margin: 15px;
-}
-
-.navbar-mobile .dropdown ul {
-  position: static;
-  display: none;
-  margin: 10px 20px;
-  padding: 10px 0;
-  z-index: 99;
-  opacity: 1;
-  visibility: visible;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-}
-
-.navbar-mobile .dropdown ul li {
-  min-width: 200px;
-}
-
-.navbar-mobile .dropdown ul a {
-  padding: 10px 20px;
-}
-
-.navbar-mobile .dropdown ul a i {
-  font-size: 12px;
-}
-
-.navbar-mobile .dropdown ul a:hover,
-.navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
-  color: #2487ce;
-}
-
-.navbar-mobile .dropdown>.dropdown-active {
-  display: block;
-}
-
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -487,8 +379,8 @@ h6 {
   font-size: 46px;
   font-weight: 700;
   line-height: 72px;
-  color: #9370DB;
-  font-family: "Poppins", sans-serif;
+  color: #1c4e63;
+  font-family: "fredoka one" , sans-serif
 }
 
 #hero h2 {
@@ -496,6 +388,11 @@ h6 {
   margin: 10px 0 0 0;
   font-size: 22px;
 }
+
+/* #hero p {
+  font-family: "fredoka one" , sans-serif;
+  color: #d291bc
+} */
 
 .icon img {
   max-width: 100%; /* Hace que la imagen no sea más ancha que su contenedor */
@@ -505,7 +402,7 @@ h6 {
 } 
 
 #hero .btn-get-started {
-  font-family: "Poppins";
+  font-family: "fredoka one" , sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.5px;
@@ -515,11 +412,11 @@ h6 {
   transition: 0.5s;
   margin-top: 30px;
   color: #fff;
-  background: #38ce24;
+  background: #957dad ;
 }
 
 #hero .btn-get-started:hover {
-  background: #3194db;
+  background: #84d9dc ;
 }
 
 #hero .icon-boxes {
@@ -544,8 +441,9 @@ h6 {
 }
 
 #hero .icon-box .title a {
-  color: #124265;
+  color: #1c4e63;
   transition: 0.3s;
+  /* font-family: "fredoka one" , sans-serif; */
 }
 
 #hero .icon-box .description {
@@ -554,7 +452,7 @@ h6 {
   margin-bottom: 0;
 }
 
-#hero .icon-box .icon {
+#hero .icon-box.icon {
   margin-bottom: 20px;
   padding-top: 10px;
   display: inline-block;
@@ -623,7 +521,8 @@ section {
   text-transform: uppercase;
   margin-bottom: 20px;
   padding-bottom: 0;
-  color: #124265;
+  color: #1c4e63;
+  font-family: "Fredoka One", sans-serif
 }
 
 .section-title p {
@@ -1630,6 +1529,13 @@ section {
   width: 100%;
   background: #fff;
 }
+.contact img {
+  flex: 1;
+  max-width: 40%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 
 .contact .info i {
   font-size: 20px;
@@ -1657,7 +1563,7 @@ section {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
-  color: #217bbc;
+  color: #1c4e63;
 }
 
 .contact .info .email,
@@ -1672,7 +1578,7 @@ section {
   color: #fff;
 }
 
-.contact .php-email-form {
+/* .contact .php-email-form {
   width: 100%;
   background: #fff;
 }
@@ -1754,7 +1660,7 @@ section {
 
 .contact .php-email-form button[type=submit]:hover {
   background: #3194db;
-}
+} */
 
 @keyframes animate-loading {
   0% {
