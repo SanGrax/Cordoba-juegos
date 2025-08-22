@@ -583,7 +583,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div class="box box-combo1">
           <h3>Combo Pequeño Aventurero</h3>
-          <h4><sup>$</sup>60.000</h4>
+          <h4><sup>$</sup>70.000</h4>
           <ul>
             <li>3 juegos pequeños a elección:</li>
             <li>Metegol</li>
@@ -621,7 +621,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div class="box box-combo3">
           <h3>Combo Castillo Plus</h3>
-          <h4><sup>$</sup>60.000</h4>
+          <h4><sup>$</sup>70.000</h4>
           <ul>
             <li>Inflable de 3x3mts o 3x5mts más un juego pequeño a elección:</li>
             <li>Metegol</li>
@@ -641,7 +641,7 @@
       <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div class="box box-combo4">
           <h3>Combo Toro Divertido</h3>
-          <h4><sup>$</sup>125.000</h4>
+          <h4><sup>$</sup>140.000</h4>
           <ul>
             <li>Toro mecánico más un juego pequeño a elección:</li>
             <li>Metegol</li>
@@ -657,15 +657,81 @@
         </div>
       </div>
 
+    
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="box box-combo5">
+          <h3>Promo especial de viernes a lunes</h3>
+          <h4><sup>$</sup>110.000</h4>
+          <ul>
+            <li>Un Pool de 2.2 + mas juego pequeño a eleccion </li>
+            <li>Metegol</li>
+            <li>Tejo</li>
+            <li>Sapo</li>
+            <li>Mini Bowling</li>
+            <li>Yenga Gigante</li>
+            <li>Domino Gigante</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="https://wa.me/5493513414540?text=Hola%20Cordoba%20Juegos!%0AMi%20nombre%20es:%0AEstoy%20interesado/a%20en%20reservar%20el%20combo%20Peque%C3%B1o%20Aventurero%20con%20los%20juegos:%0ALa%20fecha%20del%20evento%20es%20el:%0ALugar%20(casa%20o%20salon)%20(direccion%20exacta):" target="_blank" class="btn-buy">Reserva tu combo ahora</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+ <!-- Overlay + Popup -->
+  <div class="popup-overlay" id="promoPopup">
+    <div class="popup">
+        <img src="assets/img/pool-alquiler.jpg" alt="Promo alquiler de pool" class="promo-img">
+  <h2>🔥 PROMO ESPECIAL </h2>
+  <p><strong>Alquila Pool 2.2mts + Juego Chico</strong><br>
+    Desde el viernes hasta el lunes por <br>
+    <span class="precio">$110.000</span>
+  </p>
+  <button onclick="irAPricing()">Ver otras promos</button>
+  <button id="promoBtn" class="promo-floating" onclick="abrirPopup()">🎉 Aprovechar Promo</button>
+  <a href="https://wa.me/5493513414540?text=Hola%20Cordoba%20Juegos!%20Estoy%20interesado%20en%20el%20*Combo%20Pool%20+%20un%20Juego%20Chico*%20de%20la%20promo%20($%20110.000).%0AMi%20nombre%20es:%0ABarrio:%0AFecha%20del%20evento:%0ALugar%20(casa%20o%20salón):"
+     target="_blank" 
+     class="btn-whatsapp">
+     Pedir promo
+  </a>
+</div>
+  </div>
 
 
     </div>
   </div>
 </section><!-- End Pricing Section -->
 
+<script>
+  // Mostrar el popup después de 1 segundo al cargar la página
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("promoPopup").style.display = "flex";
+    }, 1000);
+  });
+
+  // Función para cerrar el popup
+  function cerrarPopup() {
+  document.getElementById("promoPopup").style.display = "none";
+  document.getElementById("promoBtn").style.display = "block"; // muestra el botón flotante
+}
+
+  // Función para ir a la sección Pricing
+  function irAPricing() {
+    cerrarPopup(); // cierra el popup
+    document.getElementById("pricing").scrollIntoView({
+      behavior: "smooth" // scroll suave
+    });
+  }
+
+  // Función para reabrir el popup
+  function abrirPopup() {
+  document.getElementById("promoPopup").style.display = "flex";
+  document.getElementById("promoBtn").style.display = "none"; // oculta el botón flotante
+}
+</script>
 
   <!-- ======= Frequently Asked Questions Section ======= -->
 <section id="faq" class="faq section-bg">
