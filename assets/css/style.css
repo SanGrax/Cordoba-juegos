@@ -720,27 +720,96 @@ section {
 # Clients
 --------------------------------------------------------------*/
 .clients {
-  padding: 15px 0;
+  padding: 15px 0 28px;
   text-align: center;
- 
 }
 
-.clients img {
-  max-width: 45%;
-  transition: all 0.4s ease-in-out;
-  display: inline-block;
-  padding: 15px 0;
-  filter: grayscale(100);
+.clients-marquee-outer {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 8px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 
-.clients img:hover {
-  filter: none;
-  transform: scale(1.15);
+.clients-marquee {
+  width: 100%;
 }
 
-@media (max-width: 768px) {
-  .clients img {
-    max-width: 40%;
+.clients-marquee-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: clients-marquee-scroll 26s linear infinite;
+  will-change: transform;
+}
+
+.clients-marquee:hover .clients-marquee-inner {
+  animation-play-state: paused;
+}
+
+.clients-marquee-group {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding: 12px clamp(1rem, 3vw, 2.5rem);
+}
+
+.clients-marquee-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clients-marquee-img {
+  max-height: 52px;
+  width: auto;
+  max-width: min(160px, 28vw);
+  object-fit: contain;
+  display: block;
+  opacity: 1;
+  transition: transform 0.35s ease;
+}
+
+.clients-marquee-item:hover .clients-marquee-img {
+  transform: scale(1.06);
+}
+
+/* Mercado Libre: un poco más grande que el resto, mismo archivo que antes */
+.clients-marquee-img--ml {
+  max-height: 58px;
+  max-width: min(200px, 38vw);
+}
+
+@keyframes clients-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-marquee-inner {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    row-gap: 1rem;
+  }
+
+  .clients-marquee-group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .clients-marquee-outer {
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 }
 
@@ -1918,4 +1987,486 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Córdoba Juegos — UX (misma paleta / branding)
+--------------------------------------------------------------*/
+html {
+  scroll-padding-top: 88px;
+}
+
+@media (max-width: 991.98px) {
+  html {
+    scroll-padding-bottom: 72px;
+  }
+}
+
+#hero .btn-hero-whatsapp {
+  font-family: "Fredoka One", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 16px 28px;
+  min-height: 48px;
+  border-radius: 8px;
+  transition: 0.3s;
+  margin-top: 30px;
+  color: #fff;
+  background: #25d366;
+  border: 2px solid #25d366;
+  text-align: center;
+  line-height: 1.2;
+}
+
+#hero .btn-hero-whatsapp:hover {
+  background: #128c7e;
+  border-color: #128c7e;
+  color: #fff;
+}
+
+#hero .hero-cta .btn-get-started {
+  margin-top: 0;
+}
+
+#hero .hero-cta .btn-hero-whatsapp {
+  margin-top: 0;
+}
+
+@media (max-width: 575.98px) {
+  #hero .hero-cta .btn-hero-whatsapp,
+  #hero .hero-cta .btn-get-started {
+    width: 100%;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.hero-trust-line {
+  font-size: 14px;
+  color: #1c4e63;
+  font-family: "Open Sans", sans-serif;
+}
+
+.about-readmore {
+  border: 1px solid #e6f2fb;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+.about-readmore-summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #2487ce;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-readmore[open] .about-readmore-summary {
+  color: #1c4e63;
+}
+
+.catalog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.catalog-filter-btn {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 16px;
+  min-height: 44px;
+  border-radius: 999px;
+  border: 2px solid #2487ce;
+  background: #fff;
+  color: #124265;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.catalog-filter-btn:hover,
+.catalog-filter-btn:focus-visible {
+  background: #e6f2fb;
+  outline: none;
+}
+
+.catalog-filter-btn.active {
+  background: #2487ce;
+  color: #fff;
+}
+
+.pricing-promo-strip {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  color: #124265;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 2px solid #fcf803;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing-promo-strip-badge {
+  display: inline-block;
+  background: #e63946;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-right: 8px;
+  font-family: "Poppins", sans-serif;
+}
+
+.pricing-promo-strip-link {
+  margin-left: 8px;
+  border: none;
+  background: none;
+  color: #2487ce;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 4px 8px;
+  min-height: 44px;
+}
+
+.combo-card-promo {
+  position: relative;
+  overflow: hidden;
+}
+
+.combo-ribbon {
+  position: absolute;
+  top: 14px;
+  right: -36px;
+  transform: rotate(45deg);
+  background: #e63946;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 40px;
+  font-family: "Poppins", sans-serif;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.contact-whatsapp-cta .btn-contact-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  background: #25d366;
+  color: #fff;
+  font-family: "Fredoka One", sans-serif;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.contact-whatsapp-cta .btn-contact-whatsapp:hover {
+  background: #128c7e;
+  color: #fff;
+}
+
+.contact-whatsapp-note {
+  font-size: 14px;
+  color: #666;
+}
+
+.contact-brand-logo {
+  max-height: 280px;
+  width: auto;
+}
+
+.mobile-bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9980;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  background: #fff;
+  border-top: 1px solid #e6f2fb;
+  box-shadow: 0 -4px 20px rgba(18, 66, 101, 0.08);
+  padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+  min-height: 56px;
+}
+
+.mobile-bottom-nav-link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #124265;
+  font-family: "Poppins", sans-serif;
+  padding: 6px 4px;
+  min-height: 48px;
+  border-radius: 8px;
+}
+
+.mobile-bottom-nav-link i {
+  font-size: 20px;
+}
+
+.mobile-bottom-nav-wa {
+  color: #fff;
+  background: #25d366;
+  margin: 0 4px;
+}
+
+.mobile-bottom-nav-wa:hover {
+  color: #fff;
+  background: #128c7e;
+}
+
+@media (max-width: 991.98px) {
+  body.site-cordoba-juegos {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom));
+  }
+
+  .whatsapp-float {
+    bottom: calc(56px + env(safe-area-inset-bottom) + 12px);
+    right: 16px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .whatsapp-float i {
+    margin-top: 13px;
+    font-size: 28px;
+  }
+
+  .promo-floating {
+    position: fixed;
+    left: 12px;
+    right: auto;
+    top: auto;
+    bottom: calc(56px + env(safe-area-inset-bottom) + 80px);
+    transform: none;
+    transform-origin: center;
+    border-radius: 999px;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    z-index: 9995;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (min-width: 992px) {
+  .promo-floating {
+    left: 16px;
+    right: auto;
+    top: auto;
+    bottom: 100px;
+    transform: none;
+    transform-origin: center;
+    border-radius: 999px;
+    padding: 12px 18px;
+    z-index: 9995;
+  }
+}
+
+.popup-overlay {
+  z-index: 10050;
+  align-items: center;
+  padding: 16px;
+}
+
+.popup {
+  position: relative;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+}
+
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #f1f1f1;
+  color: #333;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.popup-close:hover {
+  background: #e0e0e0;
+}
+
+.popup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.btn-popup-secondary {
+  background: #957dad;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.btn-popup-secondary:hover {
+  background: #f498c2;
+  color: #fff;
+}
+
+.promo-toast {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(56px + env(safe-area-inset-bottom) + 8px);
+  z-index: 10040;
+  transform: translateY(120%);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  pointer-events: none;
+}
+
+@media (min-width: 992px) {
+  .promo-toast {
+    left: auto;
+    bottom: 32px;
+    right: 100px;
+    max-width: 380px;
+    transform: translateY(120%);
+  }
+}
+
+.promo-toast.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.promo-toast-inner {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  border: 2px solid #fcf803;
+  padding: 12px 14px;
+}
+
+.promo-toast-text {
+  font-size: 14px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.promo-toast-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-whatsapp-sm {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  margin-left: 0;
+}
+
+.btn-promo-detail {
+  background: #2487ce;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-height: 40px;
+}
+
+.btn-promo-detail:hover {
+  background: #1c4e63;
+  color: #fff;
+}
+
+.btn-promo-dismiss {
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #eee;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .promo-toast-actions .btn-promo-dismiss {
+    margin-left: 0;
+  }
+}
+
+section#services.d-flex.align-items-center {
+  height: auto;
+  min-height: 100vh;
+}
+
+#services .catalog-grid .icon-box .icon img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 767.98px) {
+  #services .catalog-grid .icon-box {
+    padding: 20px 12px;
+  }
+
+  #services .catalog-grid .icon-box .title {
+    font-size: 16px;
+  }
+
+  #services .catalog-grid .icon-box .description {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .pricing .box .btn-buy {
+    padding: 14px 24px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
