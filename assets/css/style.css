@@ -2228,6 +2228,36 @@ html {
   font-size: 20px;
 }
 
+.mobile-bottom-nav-catalog {
+  color: #2487ce;
+  background: rgba(36, 135, 206, 0.1);
+}
+
+.mobile-bottom-nav-catalog i {
+  color: #2487ce;
+}
+
+.mobile-bottom-nav-catalog:hover,
+.mobile-bottom-nav-catalog:focus {
+  color: #1c4e63;
+  background: rgba(36, 135, 206, 0.18);
+}
+
+.mobile-bottom-nav-combos {
+  color: #957dad;
+  background: rgba(149, 125, 173, 0.14);
+}
+
+.mobile-bottom-nav-combos i {
+  color: #957dad;
+}
+
+.mobile-bottom-nav-combos:hover,
+.mobile-bottom-nav-combos:focus {
+  color: #6b5b86;
+  background: rgba(149, 125, 173, 0.24);
+}
+
 .mobile-bottom-nav-wa {
   color: #fff;
   background: #25d366;
@@ -2244,16 +2274,9 @@ html {
     padding-bottom: calc(56px + env(safe-area-inset-bottom));
   }
 
+  /* Ya hay acceso a WhatsApp en la barra inferior */
   .whatsapp-float {
-    bottom: calc(56px + env(safe-area-inset-bottom) + 12px);
-    right: 16px;
-    width: 56px;
-    height: 56px;
-  }
-
-  .whatsapp-float i {
-    margin-top: 13px;
-    font-size: 28px;
+    display: none !important;
   }
 
   .promo-floating {
