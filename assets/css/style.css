@@ -1380,6 +1380,13 @@ section {
   background-repeat: no-repeat; /* Esto evita que la imagen se repita si el contenedor es más grande que la imagen */
 }
 
+.pricing .box-combo6 {
+  background-image: url('/assets/img/ToroFondo.jpg'); /* Asegúrate de que esta ruta sea correcta */
+  background-size: cover; /* Esto asegura que la imagen cubra todo el área, recortando si es necesario */
+  background-position: center; /* Esto centra la imagen en el contenedor */
+  background-repeat: no-repeat; /* Esto evita que la imagen se repita si el contenedor es más grande que la imagen */
+}
+
 
 
 /*--------------------------------------------------------------
